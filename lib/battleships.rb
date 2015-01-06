@@ -4,7 +4,7 @@ class BattleShips < Sinatra::Base
   get '/' do
     'Hello BattleShips!'
      "New Game"
-
+     erb :index
   end
 
   get '/NewGame' do
