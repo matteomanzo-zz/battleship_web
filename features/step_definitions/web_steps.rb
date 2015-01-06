@@ -46,6 +46,12 @@ When /^(?:|I )fill in "([^\"]*)" for "([^\"]*)"(?: within "([^\"]*)")?$/ do |val
   with_scope(selector) do
     fill_in(field, :with => value)
   end
+
+# When /^(?:|I )enter "([^\"]*)" do |value, selector|
+#    with_scope(selector) do
+#     fill_in(field, :with => value)
+#   end
+
 end
 
 # Use this to fill in an entire form with data from a table. Example:

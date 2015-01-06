@@ -10,8 +10,9 @@ class BattleShips < Sinatra::Base
   end
 
   get '/NewGame' do
-    "What's your name?"
-    @player = params[:name]
+  
+    @player1 = params[:name1]
+    @player2 = params[:name2]
     erb :newgame
   end
   
