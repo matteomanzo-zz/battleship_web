@@ -1,6 +1,11 @@
 <div>
-<p> What's your name? </p>
 	<% if @player %>
-		Thanks, <%= @player %>!
+		Hello, <%= @player %>!
+	<% else %>
+		<p> What's your name? </p>
+			<form action='/NewGame'>
+				<input type= 'text' name= 'name'>
+				<input type= "submit">
+			</form>		
 	<% end %>
 </div>
