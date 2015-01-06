@@ -11,6 +11,8 @@ class BattleShips < Sinatra::Base
 
   get '/NewGame' do
     "What's your name?"
+    @player = params[:name]
+    erb :newgame
   end
   
   # start the server if ruby file executed directly
