@@ -18,6 +18,9 @@ module NavigationHelpers
 
     when /Players/
       '/NewGame?name1=Hannah&name2=Matteo&Submit=Submit'
+
+    when /Play Game/
+      '/PlayGame'  
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
