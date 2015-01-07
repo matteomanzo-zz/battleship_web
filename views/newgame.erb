@@ -1,6 +1,7 @@
 <div>
-	<% if @player1 %>
-			<p>Hello, <%= @player1  %></p>
+	<% unless two_players? %> (@player1 == "" && @player2 == "") || (@player1.nil? && @player2.nil?) %>
+	Player 1 is: <%= p @player1.inspect %>
+			<p>Hello, <%= @player1 %></p>
 			<p>Hello, <%= @player2 %></p>
 			<p>Welcome to BattleShips!</p>
 	<% else %>
@@ -13,5 +14,6 @@
 			<input type= "submit">
 		</form>
 	<% end %>
+
 
 </div>

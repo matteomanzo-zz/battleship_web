@@ -14,7 +14,8 @@ class BattleShips < Sinatra::Base
     @player2 = params[:name2]
     erb :newgame
   end
-  
-  # start the server if ruby file executed directly
+
+   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
