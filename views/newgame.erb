@@ -3,7 +3,6 @@
 			<p>Hello, <%= @player1 %></p>
 			<p>Hello, <%= @player2 %></p>
 			<p>Welcome to BattleShips!</p>
-			
 	<% else %>
 		<p> What is the name of Player One? </p>
 		<form action='/NewGame'>
@@ -11,9 +10,11 @@
 			<p> What is the name of Player Two? </p>
 			<form action='/NewGame'>
 			<input type= 'text' name= 'name2'>
-			<input type= "submit">
+			<input type= 'submit' name= 'Submit'>
 		</form>
+		<% if (@player1 == "") || (@player2 == "") %>
+		<p>Both players are required!!!</p>
+		<% end %>
 	<% end %>
-
 
 </div>
