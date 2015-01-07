@@ -6,12 +6,15 @@
 			<a href="/PlayGame">Play<a/> 
 	<% else %>
 		<p> What is the name of Player One? </p>
-		<form action='/NewGame'>
+		<form action='/NewGame' >
+
 			<input type= 'text' name= 'name1'>
 			<p> What is the name of Player Two? </p>
 			<form action='/NewGame'>
 			<input type= 'text' name= 'name2'>
-			<input type= 'submit' name= 'Submit'>
+			<input type= 'submit' name= 'Submit' action="/PlayGame"
+			method= "POST">
+
 		</form>
 		<% if (@player1.name == "") || (@player2.name == "") %>
 		<p>Both players are required!!!</p>
