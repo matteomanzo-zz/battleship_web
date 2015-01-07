@@ -1,20 +1,13 @@
+
 <div>
-	<% if @player1 %>
-		
-		<p> What is the name of Player Two? </p>
-		   <form action='/NewGame'>
-				<input type= 'text' name= 'name2'>
-				<input type= "submit">
-			</form>
-			<% if @player2 %>
-			   	Hello, <%= @player1 + " and " + @player2 %>
-			<% else %>   
-			   	<% end %>
+	<% if @player.name %>
+		Hello, <%= @player.name%>!
 	<% else %>
-		<p> What is the name of Player One? </p>
-			<form action='/NewGame'>
-				<input type= 'text' name= 'name1'>
-				<input type= "submit">
-			</form>		
+		<p>What's the name of the player?</p>
+		<form action='/NewGame' method='POST'>
+			<input type= 'text' name= 'name2'>
+			<input type= "submit">
+		</form>
 	<% end %>
 </div>
+
