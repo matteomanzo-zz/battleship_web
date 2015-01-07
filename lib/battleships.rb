@@ -15,15 +15,15 @@ class BattleShips < Sinatra::Base
   end
 
   get '/NewGame' do
-    NewGame = Game.new  
-    @player1 = params[:name1]
-    @player2 = params[:name2]
+    @game = Game.new  
+    @player1 = Player.new
+    @player2 = Player.new
+    @player1.name = params[:name1]
+    @player2.name = params[:name2]
     erb :newgame
   end
 
   get '/PlayGame' do
-    @player1 = Player.new
-    @player2 = Player.new
     @ship1 = params[:ship1]
     erb :playgame
   end

@@ -1,7 +1,7 @@
 <div>
 	<% unless not_two_players? %>
-			<p>Hello, <%= @player1 %></p>
-			<p>Hello, <%= @player2 %></p>
+			<p>Hello, <%= @player1.name %></p>
+			<p>Hello, <%= @player2.name %></p>
 			<p>Welcome to BattleShips!</p>
 			<a href="/PlayGame">Play<a/> 
 	<% else %>
@@ -13,7 +13,7 @@
 			<input type= 'text' name= 'name2'>
 			<input type= 'submit' name= 'Submit'>
 		</form>
-		<% if (@player1 == "") || (@player2 == "") %>
+		<% if (@player1.name == "") || (@player2.name == "") %>
 		<p>Both players are required!!!</p>
 		<% end %>
 	<% end %>
