@@ -43,8 +43,7 @@ class BattleShips < Sinatra::Base
     erb :board
   end
 
-  post '/Board' do
-  end
+ 
 
 
   
