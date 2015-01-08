@@ -35,15 +35,14 @@ class BattleShips < Sinatra::Base
   get '/Board' do
     @board1 = Board.new(Cell)
     session[:board] = @board1
-    puts @board1.inspect
+
     game.player1.board = @board1
-    puts game.inspect
+
     puts game.player1.has_board?
-    puts @board1.grid.each.object_id
+    puts @board1.object_id
     erb :board
   end
 
- 
 
 
   
