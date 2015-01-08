@@ -29,21 +29,23 @@ class BattleShips < Sinatra::Base
     puts game
     game.add_player(session[:me])
     puts game.inspect
+
     erb :playgame
   end
 
+
   get '/Board' do
-    @board1 = Board.new(Cell)
-    session[:board] = @board1
-
-    game.player1.board = @board1
-
-    puts game.player1.has_board?
-    puts @board1.object_id
-    erb :board
+    if @board1.nil?
+      @board1 = Board.new(Cell)
+      session[:board] = @board1
+      game.player1.board = @board1
+      puts game.player1.has_board?
+      puts @board1.object_id
+      erb :board
+    else
+      erb :board
+    end
   end
-
-
 
   
   def go_back

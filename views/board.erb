@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 
-<%= session[:board].object_id.inspect %>
-
-
 <html>
 	<head>
 		<title>Board</title>
 	</head>
 	<body>
-		<% @board1.grid.each_slice(10) do |cell| %>
-		<article class ='cell'>	
-		<%= cell %>
-		<a href="/Board"><img src='http://images.clipartpanda.com/math-worksheets-clip-art-math-shapes-square-ns-bw.gif' height='50' width='50'></div>
+	<table>
+		<% @board1.grid.each_slice(1) do |cell| %>
+		<% cell.each do |k| %>
+		<%= cell.object_id.inspect %>
+			<% if k.is_a?(Ship) %> 
+				water
+			<% else %>
+				<a href="/Board"><img src='http://images.clipartpanda.com/math-worksheets-clip-art-math-shapes-square-ns-bw.gif' height='50' width='50'></a>
+			<% end %>
 		<% end %>
+		<% end %>
+	</table>
 		</article>
 	</body>
-
-
-
 </html>
 
 
