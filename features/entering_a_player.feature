@@ -3,15 +3,19 @@ Feature: Entering a player
 	As a player
 	I want to see a greeting with my name
 
-		Scenario: Input name
+		Scenario: No name given
 			Given I am on New Game
-			When I fill in "name1" with "Hannah"
-			When I fill in "name2" with "Matteo"
+			When I fill in "name" with ""
 			When I press "Submit" within "submit"
-			When I am on Players
-			Then I should see "Hello, Hannah"
-			And I should see "Hello, Matteo"
-			And I should see "Welcome to BattleShips!"
+			When I go to New Game
+			Then I should see "What is the name of the Player?" within "/NewGame"
+			And I should see "Name is required!" within "/NewGame"
+
+		Scenario: Name given
+			Given I am on New Game
+			When I fill in "name" with "Hannah"
+			When I press "Submit" within "submit"
+			Then I should see "Hello, Hannah!" within "/NewGame"
 
 
 

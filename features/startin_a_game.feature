@@ -6,6 +6,5 @@ Feature: Starting the game
 	Scenario: Registering
 		Given I am on the homepage
 		When I follow "New Game"
-		Then I should see "What is the name of Player One?"
-		And I should see "What is the name of Player Two?"
+		Then I should see "What is the name of the Player?"
 
