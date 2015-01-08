@@ -9,7 +9,7 @@ class BattleShips < Sinatra::Base
 
   include Helper_methods
 
-  GAME = Game.new
+  game = Game.new
  
 
   get '/' do
@@ -22,13 +22,22 @@ class BattleShips < Sinatra::Base
 
   post '/NewGame' do
     @player = Player.new
+    session[:me] = @player
     @player.name = params[:name]
+    puts @player.inspect
+    puts session.object_id
+    puts game
+    game.add_player(session[:me])
+    puts game.inspect
     erb :playgame
   end
 
-  get '/PlayGame' do
-    erb :playgame
+  get '/Board' do
+    puts game.inspect
+    erb :board
   end
+
+
   
   def go_back
     erb :NewGame

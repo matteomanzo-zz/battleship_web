@@ -1,6 +1,7 @@
 <div>
 	<% unless no_player? %>
 		Hello, <%= @player.name %>!
+		<a href="/Board">Play Game</a>
 	<% else %>
 		<%= go_back %>
 		Name is required!
