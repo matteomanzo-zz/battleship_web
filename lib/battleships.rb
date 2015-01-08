@@ -21,11 +21,11 @@ class BattleShips < Sinatra::Base
   end
 
   post '/NewGame' do
-    @player = Player.new
-    session[:me] = @player
-    @player.name = params[:name]
-    puts @player.inspect
-    puts session.object_id
+    @player1 = Player.new
+    session[:me] = @player1
+    @player1.name = params[:name]
+    puts @player1.inspect
+    puts session
     puts game
     game.add_player(session[:me])
     puts game.inspect
@@ -33,7 +33,11 @@ class BattleShips < Sinatra::Base
   end
 
   get '/Board' do
+    board1 = Board.new(Cell)
+    puts board1.inspect
+    game.player1.board = board1
     puts game.inspect
+    puts game.player1.has_board?
     erb :board
   end
 
